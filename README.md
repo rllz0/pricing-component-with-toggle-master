@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add your solution URL here]()
-- Live Site URL: [Add your live site URL here]()
+- Solution URL: [Add your solution URL here](https://github.com/rllz0/pricing-component-with-toggle-master.git)
+- Live Site URL: [Add your live site URL here](https://rllz0.github.io/pricing-component-with-toggle-master/)
 
 ## My Process
 
