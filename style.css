@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(240, 78%, 98%);
+  background-image: url('images/bg-top.svg'), url('images/bg-bottom.svg');
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  padding: 2rem 1rem;
+}
+
+.heading {
+  margin-bottom: 4rem;
+}
+
+.heading h2 {
+  color: hsl(233, 13%, 49%);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  color: hsl(234, 14%, 74%);
+  font-size: 15px;
+}
+
+/* Button toggle switch  */
+#cb-toggle {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggle {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 32px;
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle:hover {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  opacity: 0.8;
+}
+
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+#cb-toggle:checked+.toggle::after {
+  transform: translateX(28px);
+}
+
+.card-contaniner {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+.basic,
+.professional,
+.master {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 350px;
+}
+
+.professional {
+  background: linear-gradient(to bottom right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+  transform: scale(1.1);
+  z-index: 1;
+
+}
+
+.basic p,
+.master p {
+  color: hsl(233, 13%, 49%);
+  padding: 0.8rem 0;
+  border-bottom: 1px solid hsl(234, 14%, 94%);
+}
+
+.professional p {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.basic p:first-child,
+.professional p:first-child,
+.master p:first-child {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  border-bottom: none;
+}
+
+.basic,
+.master {
+  z-index: 0;
+}
+
+.basic h1,
+.master h1 {
+  font-size: 4rem;
+  color: hsl(232, 13%, 33%);
+  height: 80px;
+}
+
+.professional h1 {
+  font-size: 4rem;
+  height: 80px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.basic button,
+.master button {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+}
+
+.basic button:hover,
+.master button:hover {
+  background: transparent;
+  border: 1px solid hsl(237, 63%, 64%);
+  color: hsl(237, 63%, 64%);
+}
+
+.professional button {
+  background-color: white;
+  color: hsl(237, 63%, 64%);
+}
+
+.professional button:hover {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.basic h1,
+.professional h1,
+.master h1 {
+  position: relative;
+}
+
+.attribution {
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: center;
+  color: hsl(233, 13%, 49%);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+@media (max-width: 1023px) and (min-width: 376px) {
+  .card-contaniner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .basic,
+  .professional,
+  .master {
+    width: 100%;
+  }
+
+  .professional {
+    transform: none;
+  }
+}
